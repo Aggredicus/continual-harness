@@ -1,0 +1,20 @@
+{
+  "name": "Grand River Commons",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "grand-river-commons",
+  "workspaceFolder": "/app",
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Grand River Commons",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
