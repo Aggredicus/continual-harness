@@ -8,6 +8,8 @@
     "dev": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
     "test": "node --test tests/*.test.js",
+    "smoke": "node scripts/smoke.mjs",
+    "verify": "npm test && npm run smoke",
     "docker:build": "docker build -t grand-river-commons .",
     "docker:run": "docker run --rm -p 5173:5173 grand-river-commons"
   },
