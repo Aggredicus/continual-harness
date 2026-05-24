@@ -1,0 +1,13 @@
+{
+  "name": "grand-river-commons",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-first MVP for a permaculture hex-card strategy game.",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": ["permaculture", "hex-grid", "deck-building", "strategy", "simulation"],
+  "license": "MIT"
+}
