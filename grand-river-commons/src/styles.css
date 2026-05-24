@@ -1,0 +1,53 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #10160f;
+  color: #f4f1e8;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top left, #263b22, #10160f 55%); }
+header { padding: 1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
+h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.7rem); }
+header p { margin: 0.25rem 0 0; color: #c6d6bd; }
+main { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 1rem; padding: 1rem; }
+#sidebar { display: flex; flex-direction: column; gap: 0.75rem; }
+.panel, #hand, #log, #controls { background: rgba(13, 24, 12, 0.82); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 0.85rem; box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+.panel h2, #hand h2, #log h2 { margin: 0 0 0.5rem; font-size: 1rem; color: #d9f0c7; }
+dl { display: grid; gap: 0.25rem; margin: 0; }
+dl div { display: flex; justify-content: space-between; gap: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.15rem; }
+dt { color: #b8cbb0; } dd { margin: 0; font-weight: 700; }
+button { cursor: pointer; border: 0; border-radius: 12px; padding: 0.6rem 0.75rem; background: #d9f0c7; color: #132013; font-weight: 700; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button:hover:not(:disabled) { filter: brightness(1.06); }
+#controls { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+#map { overflow: auto; padding: 1rem; background: rgba(0,0,0,0.18); border-radius: 18px; }
+.hex-map { display: grid; grid-template-columns: repeat(15, 42px); grid-template-rows: repeat(15, 38px); gap: 3px; width: max-content; padding: 0.75rem; }
+.hex { width: 42px; height: 36px; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); border-radius: 0; padding: 0; font-size: 0.8rem; border: 2px solid rgba(255,255,255,0.18); }
+.hex.selected { outline: 3px solid #fff3a1; outline-offset: 2px; }
+.owner-commons { border-color: #a5f08f; }
+.owner-megaCorp { border-color: #ff6b5f; }
+.tile-river { background: #2c7fb8; color: white; }
+.tile-wetland { background: #3d8f68; color: white; }
+.tile-mature_oak { background: #246b2f; color: #f6ffe8; }
+.tile-young_oak, .tile-oak_sapling { background: #66a84f; }
+.tile-grassland { background: #87a95e; }
+.tile-farm_field { background: #b79a52; }
+.tile-degraded_lot, .tile-bare_soil { background: #8b6d4c; color: white; }
+.tile-pathway { background: #c99c64; }
+.tile-compost_pile, .tile-finished_compost { background: #5a3d25; color: white; }
+.tile-garden_bed { background: #6ea84f; }
+.tile-pavement { background: #5d6268; color: white; }
+.tile-warehouse { background: #3a3a3a; color: #ffdad5; }
+.tile-monocrop { background: #d1c25f; color: #292100; }
+.tile-fallen_log { background: #70451f; color: white; }
+.card-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; }
+.card { text-align: left; min-height: 150px; background: linear-gradient(180deg, #f5f0d1, #cfe6b7); color: #172315; border: 3px solid transparent; }
+.card.selected { border-color: #fff3a1; }
+.card strong, .card small, .card em { display: block; }
+.card p { margin: 0.5rem 0; font-size: 0.9rem; font-weight: 500; }
+#log { margin-top: 1rem; max-height: 260px; overflow: auto; }
+#log ol { margin: 0; padding-left: 1.25rem; }
+#log li { margin-bottom: 0.4rem; color: #d8dfd0; }
+.winner { color: #fff3a1; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
