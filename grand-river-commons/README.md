@@ -40,17 +40,33 @@ Stop the container with:
 docker compose down
 ```
 
-## Run tests with Docker
+## Verify with Docker
+
+Run the unit tests inside Docker:
 
 ```bash
 cd grand-river-commons
 docker compose run --rm grand-river-commons npm test
 ```
 
-Or with Make:
+Run the static-server smoke test inside Docker:
+
+```bash
+docker compose run --rm -e SMOKE_PORT=5174 grand-river-commons npm run smoke
+```
+
+Run both checks together:
+
+```bash
+docker compose run --rm -e SMOKE_PORT=5174 grand-river-commons npm run verify
+```
+
+Or use Make:
 
 ```bash
 make docker-test
+make docker-smoke
+make docker-verify
 ```
 
 ## Local development without Docker
@@ -68,20 +84,26 @@ Then open:
 http://localhost:5173
 ```
 
-Run tests locally:
+Run local tests and smoke checks:
 
 ```bash
 npm test
+npm run smoke
+npm run verify
 ```
 
 ## Makefile shortcuts
 
 ```bash
-make dev          # local Node static server
-make test         # local tests
-make docker-up    # docker compose up --build
-make docker-test  # tests inside Docker
-make docker-down  # stop containers
+make dev            # local Node static server
+make test           # local tests
+make smoke          # local server smoke test
+make verify         # local tests plus smoke test
+make docker-up      # docker compose up --build
+make docker-test    # tests inside Docker
+make docker-smoke   # smoke test inside Docker
+make docker-verify  # tests plus smoke test inside Docker
+make docker-down    # stop containers
 ```
 
 ## Dev container
